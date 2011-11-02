@@ -6,6 +6,19 @@ set -e
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# test
 bundle install --without production
 bundle exec rake db:drop:all db:migrate
 bundle exec rake
+
+# deploy to a new heroku instance
+git remote rm heroku || true
+if [ "$GIT_BRANCH" = "master" ]; then
+	git remote add heroku git@heroku.com:mwiki-prod.git
+else
+	bundle exec heroku apps:create
+fi
+
+git branch deploy
+git push heroku deploy:master
+bundle exec heroku run:rake db:setup
