@@ -10,7 +10,7 @@ group :development do
 end
 
 group :test do
-  # Pretty printed test output
+  gem 'factory_girl_rails'
   gem 'turn', :require => false
 end
 
