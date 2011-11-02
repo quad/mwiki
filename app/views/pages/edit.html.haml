@@ -1,0 +1,10 @@
+%h1
+  = "Edit #{@page.title}"
+
+= form_for(@page, :method => :put, :url => {:action => 'update'}, :html => {:class => 'form-stacked'}) do |f|
+  .edit_area
+    = f.hidden_field :title
+    = f.text_area :body, :html => {:class => 'xxlarge'}
+  .actions
+    = f.submit "Save", :class => 'btn primary large'
+    %a.btn.large{:href => page_path(:id => @page.title)} I changed my mind...

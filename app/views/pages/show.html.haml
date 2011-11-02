@@ -1,1 +1,4 @@
-%h1 Hi!
+.body
+  != RDiscount.new(@page.body, :smart, :filter_styles, :filter_html, :safelink, :autolink).to_html
+%a.btn.primary.large{:href => edit_page_path}
+  Edit

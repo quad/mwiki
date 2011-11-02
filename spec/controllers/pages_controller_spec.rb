@@ -13,7 +13,6 @@ describe PagesController do
     get :show, :id => expected_title
 
     assigns(:page).should be_a Page
-    y assigns(:page)
     assigns(:page).title.should == expected_title
   end
 
@@ -40,10 +39,10 @@ describe PagesController do
     it "should accept edits" do
       expected_title = page.title
 
-      put :update, :id => page.title, :body => expected_body
+      put :update, :id => page.title, :page => {:body => expected_body}
 
-      page.body.should == expected_body
       assigns(:page).should == page
+      assigns(:page).body.should == expected_body
       response.should redirect_to :action => 'show', :id => expected_title
     end
 
