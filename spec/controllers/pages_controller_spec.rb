@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe PagesController do
   it "should redirect #index to 'Welcome'" do
     get :index
