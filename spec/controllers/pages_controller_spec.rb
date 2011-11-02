@@ -33,7 +33,7 @@ describe PagesController do
       get :edit, :id => page.title
 
       assigns(:page).should == page
-      response.should render_template 'show'
+      response.should render_template 'edit'
     end
 
     it "should accept edits" do
