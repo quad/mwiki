@@ -7,4 +7,5 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 bundle install --without production
+bundle exec rake db:drop:all db:migrate
 bundle exec rake
