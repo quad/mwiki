@@ -93,6 +93,11 @@ GEM
     rspec-expectations (2.7.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.7.0)
+    rspec-rails (2.7.0)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      rspec (~> 2.7.0)
     rubyzip (0.9.4)
     sprockets (2.0.3)
       hike (~> 1.2)
@@ -118,6 +123,6 @@ DEPENDENCIES
   pg
   rails (= 3.1.1)
   rake
-  rspec
+  rspec-rails
   sqlite3
   turn

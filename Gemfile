@@ -6,13 +6,16 @@ gem 'jquery-rails'
 group :development do
   gem 'heroku'
   gem 'rake'
-  gem 'rspec'
   gem 'sqlite3'
 end
 
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+end
+
+group :test, :development do
+  gem 'rspec-rails'
 end
 
 group :production do
