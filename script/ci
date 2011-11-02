@@ -19,6 +19,7 @@ else
 	bundle exec heroku apps:create
 fi
 
+git branch -D deploy || true
 git branch deploy
 git push heroku deploy:master
 bundle exec heroku run:rake db:setup
